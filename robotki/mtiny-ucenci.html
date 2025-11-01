@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mTiny – stran za učence | Didaktični robotki</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <nav class="topnav">
+    <div class="nav-left">
+      <img src="logo.png" alt="Logo Didaktični robotki" class="nav-logo">
+      <span class="nav-title">Didaktični robotki</span>
+    </div>
+
+    <div class="nav-links">
+      <a href="../index.html">Domov</a>
+      <a href="bluebot.html">Blue-Bot</a>
+      <a href="mtiny.html" class="active">mTiny</a>
+      <a href="kubo.html">Kubo</a>
+      <a href="lego-essential.html">Lego Essential</a>
+      <a href="lego-prime.html">Lego Prime</a>
+    </div>
+
+    <div class="nav-search">
+      <input type="text" id="searchInput" placeholder="Išči robotka...">
+      <button id="searchBtn">🔍</button>
+    </div>
+  </nav>
+
+  <main class="robot-page">
+    <h1>mTiny – dejavnost za učence</h1>
+
+    <div class="lesson-intro">
+      <img src="tiny.jpg" alt="mTiny robotek" class="lesson-img">
+      <div class="lesson-info">
+        <p>
+          Danes bomo s pomočjo robotka <strong>mTiny</strong> raziskovali potovanje po mestu in vadili logično razmišljanje ter orientacijo v prostoru.
+        </p>
+      </div>
+    </div>
+    <div class="lesson-video-container">
+        <div class="lesson-video">
+            <span class="close-video">&times;</span>
+            <video src="../Dash_Maxxed.mkv" controls></video>
+            <div class="video-text">Informativni video o uporabi robotka mTiny</div>
+        </div>
+    </div>
+
+    <section class="lesson-objectives">
+      <h2>🎯 Učni cilji</h2>
+      <ul>
+        <li>Učenci razumejo pojem zaporedja ukazov (programa).</li>
+        <li>Učenci znajo uporabiti kodirne kartice za vodenje robotka mTiny.</li>
+        <li>Učenci sodelujejo pri reševanju naloge in načrtovanju poti.</li>
+      </ul>
+    </section>
+
+    <section class="lesson-steps">
+      <h2>📋 Potek dejavnosti</h2>
+      <ol>
+        <li>Učitelj predstavi robotka mTiny in pokaže kodirne kartice.</li>
+        <li>Učenci skupaj načrtujejo pot od hiše do šole na tematski podlagi.</li>
+        <li>V paru izberejo in zložijo zaporedje kartic (npr. naprej, desno, naprej...).</li>
+        <li>Preverijo svoj program z robotkom.</li>
+        <li>Če mTiny ne pride do cilja, razmislijo, katero kartico je treba spremeniti.</li>
+      </ol>
+    </section>
+
+    <section class="lesson-task">
+      <h2>🤖 Tvoja naloga</h2>
+      <p>
+        Pomagaj mTinyju najti pot od <strong>parka</strong> do <strong>igrišča</strong>.  
+        Uporabi kartice za gibanje (naprej, levo, desno) in jih zloži v pravem vrstnem redu.  
+        Nato preveri, ali je tvoj program uspešen.
+      </p>
+    </section>
+
+    <section class="lesson-reflection">
+      <h2>💬 Razmisli</h2>
+      <ul>
+        <li>Ali je mTiny prišel do cilja?</li>
+        <li>Kaj si moral spremeniti, da je pot postala pravilna?</li>
+        <li>Kaj pomeni, da program vsebuje zaporedje ukazov?</li>
+      </ul>
+    </section>
+
+    <section class="next-page">
+      <a href="mtiny.html" class="next-button">← Nazaj na stran za učitelje</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-left">
+      <img src="logo.png" alt="Logo Didaktični robotki" class="footer-logo">
+    </div>
+
+    <div class="footer-center">
+      <p>
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">
+          <img src="cc.png" alt="CC BY-SA 4.0 License" class="cc-logo">
+        </a><br>
+        Vsebina pod licenco CC BY-SA 4.0
+      </p>
+    </div>
+
+    <div class="footer-right">
+      <p>Kontakt: <a href="mailto:info@didakticnirobotki.si">info@didakticnirobotki.si</a></p>
+      <p>Pedagoška fakulteta LJ</p>
+    </div>
+  </footer>
+  <script>
+  const closeVideoBtn = document.querySelector(".close-video");
+  const videoContainer = document.querySelector(".lesson-video-container");
+
+  if (closeVideoBtn && videoContainer) {
+    closeVideoBtn.addEventListener("click", () => {
+      videoContainer.style.display = "none";
+    });
+  }
+</script>
+</body>
+</html>

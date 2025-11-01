@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Didaktični robotki</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+   <nav class="topnav">
+    <div class="nav-left">
+      <img src="robotki/logo.png" alt="Logo Didaktični robotki" class="nav-logo">
+      <span class="nav-title">Didaktični robotki</span>
+    </div>
+
+    <div class="nav-links">
+      <a href="index.html" class="active">Domov</a>
+      <a href="robotki/bluebot.html">Blue-Bot</a>
+      <a href="robotki/mtiny.html">mTiny</a>
+      <a href="robotki/kubo.html">Kubo</a>
+      <a href="robotki/lego-essential.html">Lego Essential</a>
+      <a href="robotki/lego-prime.html">Lego Prime</a>
+    </div>
+
+    <div class="nav-search">
+      <input type="text" id="searchInput" placeholder="Išči robotka...">
+      <button id="searchBtn">🔍</button>
+    </div>
+  </nav>
+
+  <main>
+    <header>
+      <h1>Didaktični robotki</h1>
+      <p>Izberi svojega robotka in odkrij, kako ga lahko uporabiš pri pouku.</p>
+    </header>
+
+    <section class="robot-gallery">
+      <div class="robot" 
+           data-name="Blue-Bot" 
+           data-desc="Preprost robotek za osnovno programiranje z gumbi ali aplikacijo Bluetooth."
+           data-link="robotki/bluebot.html">
+        <img src="robotki/blue.png" alt="Blue-Bot" />
+        <h3>Blue-Bot</h3>
+      </div>
+
+      <div class="robot" 
+           data-name="mTiny" 
+           data-desc="Didaktični robotek za učenje programiranja brez zaslona, s karticami in interaktivno tablico."
+           data-link="robotki/mtiny.html">
+        <img src="robotki/tiny.jpg" alt="mTiny" />
+        <h3>mTiny</h3>
+      </div>
+
+      <div class="robot" 
+           data-name="Kubo" 
+           data-desc="Robotek, ki otroke uči programiranja s sestavljanjem fizičnih tagov – brez računalnika."
+           data-link="robotki/kubo.html">
+        <img src="robotki/kubo.png" alt="Kubo" />
+        <h3>Kubo</h3>
+      </div>
+
+      <div class="robot" 
+           data-name="Lego Essential" 
+           data-desc="STEAM komplet za osnovnošolce, ki povezuje gradnjo, tehnologijo in programiranje v Scratch okolju."
+           data-link="robotki/lego-essential.html">
+        <img src="robotki/essential.jpg" alt="Lego Essential" />
+        <h3>Lego Essential</h3>
+      </div>
+
+      <div class="robot" 
+           data-name="Lego Prime" 
+           data-desc="Napredni Lego komplet za višje razrede in srednješolce – vključuje senzorje, motorje in programiranje v Pythonu."
+           data-link="robotki/lego-prime.html">
+        <img src="robotki/prime.jpg" alt="Lego Prime" />
+        <h3>Lego Prime</h3>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====== Modal (popup) ====== -->
+  <div id="robotModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <p id="modalDesc"></p>
+      <a id="modalLink" href="#" class="modal-button">Odpri stran robotka</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-left">
+      <img src="robotki/logo.png" alt="Logo Didaktični robotki" class="footer-logo">
+    </div>
+
+    <div class="footer-center">
+      <p>
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">
+          <img src="robotki/cc.png" alt="CC BY-SA 4.0 License" class="cc-logo">
+        </a><br>
+        Vsebina pod licenco CC BY-SA 4.0
+      </p>
+    </div>
+
+    <div class="footer-right">
+      <p>Kontakt: <a href="mailto:info@didakticnirobotki.si">info@didakticnirobotki.si</a></p>
+      <p>Pedagoška fakulteta LJ</p>
+    </div>
+  </footer>
+
+  <script>
+    const searchBtn = document.getElementById('searchBtn');
+    const searchInput = document.getElementById('searchInput');
+
+    if (searchBtn && searchInput) {
+      searchBtn.addEventListener('click', () => {
+        const query = searchInput.value.toLowerCase();
+        document.querySelectorAll('.robot').forEach(robot => {
+          const name = robot.querySelector('h3').textContent.toLowerCase();
+          robot.style.display = name.includes(query) ? 'block' : 'none';
+        });
+      });
+
+      searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') searchBtn.click();
+      });
+    }
+
+    // Modal logika
+    const modal = document.getElementById("robotModal");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalDesc = document.getElementById("modalDesc");
+    const modalLink = document.getElementById("modalLink");
+    const closeBtn = document.querySelector(".close");
+
+    document.querySelectorAll(".robot").forEach(robot => {
+      robot.addEventListener("click", () => {
+        modalTitle.textContent = robot.dataset.name;
+        modalDesc.textContent = robot.dataset.desc;
+        modalLink.href = robot.dataset.link;
+        modal.style.display = "flex";
+      });
+    });
+
+    closeBtn.onclick = () => modal.style.display = "none";
+    window.onclick = (event) => {
+      if (event.target === modal) modal.style.display = "none";
+    };
+  </script>
+</body>
+</html>

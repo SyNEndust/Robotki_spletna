@@ -1,0 +1,456 @@
+/* ====== Osnovni stil ====== */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #e3e2e1;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ====== Top navigacija ====== */
+.topnav {
+  background: #0065b8;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo {
+  height: 40px;
+  width: auto;
+  border-radius: 6px;
+}
+
+.nav-title {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #e3e2e1;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background: #aadeff;
+  color: #0065b8;
+}
+
+.nav-search {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.nav-search input {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+}
+
+.nav-search button {
+  background: #aadeff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.nav-search button:hover {
+  background: #e3e2e1;
+}
+
+
+/* ====== Glavni del ====== */
+main {
+  margin-left: 80px;
+  padding: 20px;
+  flex: 1;
+  transition: margin-left 0.3s;
+}
+
+.sidebar:hover ~ main {
+  margin-left: 220px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 2.5em;
+  color: #0065b8;
+}
+
+header p {
+  color: #333;
+}
+
+/* ====== Galerija robotkov ====== */
+.robot-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+.robot {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 220px;
+  padding: 15px;
+}
+
+.robot img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.robot h3 {
+  margin-top: 10px;
+  color: #0065b8;
+}
+
+.robot:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* ====== Footer ====== */
+footer {
+  background: #0065b8;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 15px 30px;
+  font-size: 0.9em;
+  position: relative;
+  z-index: 2;
+}
+
+footer a {
+  color: #aadeff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 5px 10px;
+}
+
+.footer-center {
+  flex-direction: column;
+  text-align: center;
+  font-size: 0.8em;
+}
+
+.footer-logo {
+  height: 50px;
+  width: auto;
+}
+
+.cc-logo {
+  height: 25px;
+  width: auto;
+}
+
+.site-name {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #e3e2e1;
+}
+/* ====== Modal (popup opis robotka) ====== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.modal-content h2 {
+  color: #0065b8;
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.modal-button {
+  background: #0065b8;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.modal-button:hover {
+  background: #004a8a;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 28px;
+  color: #666;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #000;
+}
+
+/* ====== Stran za učitelje – bele kartice ====== */
+/* SAMOSTOJNA slika robotka za učitelje */
+.robot-image-container {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.robot-main-image {
+  width: 400px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.robot-page {
+  padding: 40px;
+  margin-top: 20px;
+  background: #e3e2e1;
+}
+
+.robot-header,
+.kit-contents,
+.activities {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 25px 30px;
+  margin-bottom: 25px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.robot-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+}
+
+.robot-header img {
+  width: 400px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.robot-info {
+  max-width: 500px;
+}
+
+.kit-contents ul,
+.activities ul {
+  margin-left: 20px;
+}
+
+.kit-contents li,
+.activities li {
+  margin-bottom: 8px;
+}
+
+.next-page {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.next-button {
+  background: #0065b8;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.next-button:hover {
+  background: #004a8a;
+}
+
+/* Naslovi v sekcijah */
+.robot-header h2,
+.kit-contents h2,
+.activities h2 {
+  color: #0065b8;
+  margin-bottom: 10px;
+}
+/* ====== Stran za učence ====== */
+.lesson-intro {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
+}
+
+.lesson-intro img.lesson-img {
+  width: 250px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.lesson-info {
+  flex: 1;
+  min-width: 200px;
+}
+
+.lesson-info p {
+    background-color: #ffffff;
+  font-size: 1.1em;
+  line-height: 1.5;
+}
+
+.lesson-objectives,
+.lesson-steps,
+.lesson-task,
+.lesson-reflection {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px 30px;
+  margin-bottom: 25px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.lesson-objectives h2,
+.lesson-steps h2,
+.lesson-task h2,
+.lesson-reflection h2 {
+  color: #0065b8;
+  margin-bottom: 10px;
+}
+
+.lesson-map {
+  display: block;
+  margin: 15px auto;
+  border-radius: 12px;
+}
+
+.lesson-reflection ul {
+  margin-left: 20px;
+}
+/* ====== Sticky video za učence ====== */
+.lesson-video-container {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  z-index: 20;
+  max-width: 500px;
+}
+
+.lesson-video {
+  position: relative;
+  border: 3px solid #0065b8;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.lesson-video video {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  display: block;
+}
+
+.close-video {
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #666;
+  cursor: pointer;
+  z-index: 25;
+}
+
+.close-video:hover {
+  color: #000;
+}
+
+.video-text {
+  text-align: center;
+  padding: 6px 0;
+  background: #aadeff;
+  border-radius: 0 0 10px 10px;
+  font-size: 0.9em;
+  font-weight: 500;
+  color: #0065b8;
+}
+
+@media (max-width: 768px) {
+  .lesson-video-container {
+    display: none;
+  }
+}
